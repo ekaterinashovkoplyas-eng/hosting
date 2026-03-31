@@ -6,14 +6,14 @@
   <title>Interior Icon Set</title>
   <style>
     :root {
-      --bg: #f4ede3;
-      --panel: rgba(255, 250, 244, 0.76);
-      --text: #261b16;
-      --muted: #6e5d52;
-      --accent: #c96b3b;
-      --accent-soft: #e4b07a;
-      --line: rgba(38, 27, 22, 0.12);
-      --shadow: 0 24px 70px rgba(63, 39, 25, 0.14);
+      --bg: #060606;
+      --panel: rgba(18, 18, 18, 0.78);
+      --text: #f3efe8;
+      --muted: #a39b92;
+      --accent: #d7a56d;
+      --accent-soft: #8d6b4d;
+      --line: rgba(255, 255, 255, 0.1);
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.45);
     }
 
     * {
@@ -26,9 +26,9 @@
       font-family: Georgia, "Times New Roman", serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(201, 107, 59, 0.2), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(228, 176, 122, 0.35), transparent 30%),
-        linear-gradient(135deg, #efe2d2 0%, #f7f0e8 42%, #eaddcc 100%);
+        radial-gradient(circle at top left, rgba(215, 165, 109, 0.16), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(141, 107, 77, 0.2), transparent 32%),
+        linear-gradient(135deg, #050505 0%, #111111 42%, #1a1a1a 100%);
     }
 
     .page {
@@ -50,7 +50,7 @@
     .icon-card {
       backdrop-filter: blur(18px);
       background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+      border: 1px solid rgba(255, 255, 255, 0.08);
       box-shadow: var(--shadow);
     }
 
@@ -107,7 +107,7 @@
       width: 180px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: rgba(201, 107, 59, 0.12);
+      background: rgba(215, 165, 109, 0.1);
     }
 
     .note-title {
@@ -151,7 +151,7 @@
 
     .icon-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 28px 80px rgba(63, 39, 25, 0.18);
+      box-shadow: 0 28px 80px rgba(0, 0, 0, 0.55);
     }
 
     .icon-card::before {
@@ -161,7 +161,7 @@
       width: 120px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: rgba(201, 107, 59, 0.1);
+      background: rgba(215, 165, 109, 0.08);
     }
 
     .icon-box {
@@ -170,8 +170,8 @@
       display: grid;
       place-items: center;
       border-radius: 24px;
-      background: linear-gradient(145deg, rgba(201, 107, 59, 0.12), rgba(255, 255, 255, 0.72));
-      border: 1px solid rgba(201, 107, 59, 0.14);
+      background: linear-gradient(145deg, rgba(215, 165, 109, 0.14), rgba(36, 36, 36, 0.92));
+      border: 1px solid rgba(215, 165, 109, 0.18);
     }
 
     svg {
