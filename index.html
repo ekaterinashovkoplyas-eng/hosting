@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interior Icon Set</title>
+  <style>
+    :root {
+      --bg: #f4ede3;
+      --panel: rgba(255, 250, 244, 0.76);
+      --text: #261b16;
+      --muted: #6e5d52;
+      --accent: #c96b3b;
+      --accent-soft: #e4b07a;
+      --line: rgba(38, 27, 22, 0.12);
+      --shadow: 0 24px 70px rgba(63, 39, 25, 0.14);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(201, 107, 59, 0.2), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(228, 176, 122, 0.35), transparent 30%),
+        linear-gradient(135deg, #efe2d2 0%, #f7f0e8 42%, #eaddcc 100%);
+    }
+
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 48px 0 64px;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: end;
+      margin-bottom: 28px;
+    }
+
+    .hero-copy,
+    .hero-note,
+    .icon-card {
+      backdrop-filter: blur(18px);
+      background: var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.55);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-copy {
+      padding: 36px;
+      border-radius: 36px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.82rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 38px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.8rem, 6vw, 5.2rem);
+      line-height: 0.96;
+      font-weight: 600;
+      max-width: 8ch;
+    }
+
+    .lead {
+      max-width: 42rem;
+      margin: 22px 0 0;
+      color: var(--muted);
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    .hero-note {
+      padding: 28px;
+      border-radius: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-note::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -50px auto;
+      width: 180px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(201, 107, 59, 0.12);
+    }
+
+    .note-title {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      margin-bottom: 12px;
+    }
+
+    .note-value {
+      font-size: 2.8rem;
+      line-height: 1;
+      margin: 0 0 10px;
+    }
+
+    .note-text {
+      margin: 0;
+      max-width: 24ch;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .icon-card {
+      border-radius: 30px;
+      padding: 26px;
+      position: relative;
+      overflow: hidden;
+      min-height: 280px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.28s ease, box-shadow 0.28s ease;
+    }
+
+    .icon-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 80px rgba(63, 39, 25, 0.18);
+    }
+
+    .icon-card::before {
+      content: "";
+      position: absolute;
+      inset: auto -32px -42px auto;
+      width: 120px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(201, 107, 59, 0.1);
+    }
+
+    .icon-box {
+      width: 92px;
+      height: 92px;
+      display: grid;
+      place-items: center;
+      border-radius: 24px;
+      background: linear-gradient(145deg, rgba(201, 107, 59, 0.12), rgba(255, 255, 255, 0.72));
+      border: 1px solid rgba(201, 107, 59, 0.14);
+    }
+
+    svg {
+      width: 58px;
+      height: 58px;
+      stroke: var(--text);
+      stroke-width: 1.8;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .card-id {
+      margin-top: 18px;
+      font-size: 0.76rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    .card-title {
+      margin: 8px 0 10px;
+      font-size: 1.55rem;
+      font-weight: 600;
+    }
+
+    .card-text {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.65;
+      max-width: 26ch;
+    }
+
+    .footer-note {
+      margin-top: 28px;
+      padding: 0 6px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 920px) {
+      .hero,
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding: 28px;
+      }
+
+      .icon-card {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        width: min(100% - 20px, 1180px);
+        padding: 20px 0 36px;
+      }
+
+      .hero-copy,
+      .hero-note,
+      .icon-card {
+        border-radius: 24px;
+      }
+
+      .icon-card {
+        padding: 22px;
+      }
+
+      .icon-box {
+        width: 82px;
+        height: 82px;
+      }
+
+      h1 {
+        max-width: 10ch;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow">Interior Design Icons</div>
+        <h1>Иконки для эстетики интерьера</h1>
+        <p class="lead">
+          Чистый HTML-шаблон с набором интерьерных пиктограмм: мебель, свет, декор и планировка.
+          Подходит для портфолио студии, каталога услуг или презентации дизайн-системы.
+        </p>
+      </div>
+
+      <aside class="hero-note">
+        <div class="note-title">Коллекция</div>
+        <p class="note-value">6</p>
+        <p class="note-text">
+          Минималистичные SVG-иконки встроены прямо в страницу и масштабируются без потери качества.
+        </p>
+      </aside>
+    </section>
+
+    <section class="grid">
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M18 34h28v10H18z"></path>
+              <path d="M22 24h20a8 8 0 0 1 8 8v2H14v-2a8 8 0 0 1 8-8Z"></path>
+              <path d="M20 44v8"></path>
+              <path d="M44 44v8"></path>
+            </svg>
+          </div>
+          <div class="card-id">01 / Furniture</div>
+          <h2 class="card-title">Диван</h2>
+          <p class="card-text">Иконка мягкой мебели для разделов о гостиных, подборе гарнитуров и moodboard-панелей.</p>
+        </div>
+      </article>
+
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 10v24"></path>
+              <path d="M20 18 32 10l12 8"></path>
+              <path d="M24 34h16"></path>
+              <path d="M28 34v18"></path>
+              <path d="M36 34v18"></path>
+              <path d="M24 52h16"></path>
+            </svg>
+          </div>
+          <div class="card-id">02 / Lighting</div>
+          <h2 class="card-title">Лампа</h2>
+          <p class="card-text">Легкая графика для блоков об освещении, сценариях света и декоративных подвесах.</p>
+        </div>
+      </article>
+
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M32 50V34"></path>
+              <path d="M24 22c0 6 4 10 8 12 4-2 8-6 8-12-4 0-8 2-8 6 0-4-4-6-8-6Z"></path>
+              <path d="M22 50h20"></path>
+              <path d="M26 50c0-4 2-7 6-7s6 3 6 7"></path>
+            </svg>
+          </div>
+          <div class="card-id">03 / Decor</div>
+          <h2 class="card-title">Растение</h2>
+          <p class="card-text">Подходит для категорий биофильного дизайна, зелёного декора и акцентных интерьерных деталей.</p>
+        </div>
+      </article>
+
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M16 24h32"></path>
+              <path d="M22 24v28"></path>
+              <path d="M42 24v28"></path>
+              <path d="M14 52h36"></path>
+              <path d="M24 18h16"></path>
+              <path d="M28 18v-6"></path>
+              <path d="M36 18v-6"></path>
+            </svg>
+          </div>
+          <div class="card-id">04 / Dining</div>
+          <h2 class="card-title">Стол</h2>
+          <p class="card-text">Символ обеденной зоны или рабочего пространства для планировок, лендингов и карточек проектов.</p>
+        </div>
+      </article>
+
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <rect x="18" y="14" width="28" height="36" rx="2"></rect>
+              <path d="M24 20h16v12H24z"></path>
+              <path d="M24 38h16"></path>
+            </svg>
+          </div>
+          <div class="card-id">05 / Art</div>
+          <h2 class="card-title">Постер</h2>
+          <p class="card-text">Иконка настенного декора для галерей, каталогов искусства и презентации стилистических решений.</p>
+        </div>
+      </article>
+
+      <article class="icon-card">
+        <div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M14 14h16v14H14z"></path>
+              <path d="M34 14h16v8H34z"></path>
+              <path d="M34 26h16v24H34z"></path>
+              <path d="M14 32h16v18H14z"></path>
+              <path d="M30 21h4"></path>
+              <path d="M22 28v4"></path>
+            </svg>
+          </div>
+          <div class="card-id">06 / Layout</div>
+          <h2 class="card-title">Планировка</h2>
+          <p class="card-text">Универсальная пиктограмма для чертежей, схем помещений и концептов по зонированию пространства.</p>
+        </div>
+      </article>
+    </section>
+
+    <p class="footer-note">
+      Страница не использует внешние библиотеки: откройте файл в браузере и при необходимости замените тексты,
+      палитру или SVG на собственный набор иконок.
+    </p>
+  </main>
+</body>
+</html>
