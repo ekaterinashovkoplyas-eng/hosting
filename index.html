@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Interior Icon Set</title>
+  <title>Иконы Предметного Дизайна</title>
   <style>
     :root {
-      --bg: #f4ede3;
-      --panel: rgba(255, 250, 244, 0.76);
-      --text: #261b16;
-      --muted: #6e5d52;
-      --accent: #c96b3b;
-      --accent-soft: #e4b07a;
-      --line: rgba(38, 27, 22, 0.12);
-      --shadow: 0 24px 70px rgba(63, 39, 25, 0.14);
+      --ink: #171312;
+      --paper: #f6efe6;
+      --paper-deep: #eadfce;
+      --card: rgba(255, 250, 244, 0.78);
+      --line: rgba(23, 19, 18, 0.12);
+      --muted: #72655b;
+      --accent: #9f2b1f;
+      --accent-soft: #d56d4f;
+      --shadow: 0 28px 80px rgba(63, 35, 26, 0.12);
     }
 
     * {
@@ -23,367 +24,663 @@
     body {
       margin: 0;
       min-height: 100vh;
-      font-family: Georgia, "Times New Roman", serif;
-      color: var(--text);
+      color: var(--ink);
+      font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
       background:
-        radial-gradient(circle at top left, rgba(201, 107, 59, 0.2), transparent 28%),
-        radial-gradient(circle at bottom right, rgba(228, 176, 122, 0.35), transparent 30%),
-        linear-gradient(135deg, #efe2d2 0%, #f7f0e8 42%, #eaddcc 100%);
+        radial-gradient(circle at top left, rgba(213, 109, 79, 0.18), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(159, 43, 31, 0.14), transparent 34%),
+        linear-gradient(135deg, #f5ecdf 0%, #fbf6ef 46%, #eadccc 100%);
+    }
+
+    a {
+      color: inherit;
     }
 
     .page {
-      width: min(1180px, calc(100% - 32px));
+      width: min(1200px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 48px 0 64px;
+      padding: 28px 0 56px;
+    }
+
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 18px;
+      margin-bottom: 28px;
+      padding: 0 6px;
+      color: var(--muted);
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .hero {
       display: grid;
-      grid-template-columns: 1.15fr 0.85fr;
-      gap: 28px;
-      align-items: end;
-      margin-bottom: 28px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr);
+      gap: 22px;
+      margin-bottom: 24px;
     }
 
-    .hero-copy,
-    .hero-note,
-    .icon-card {
-      backdrop-filter: blur(18px);
-      background: var(--panel);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+    .hero-main,
+    .hero-side,
+    .card,
+    .essay,
+    .sources {
+      background: var(--card);
+      border: 1px solid rgba(255, 255, 255, 0.62);
       box-shadow: var(--shadow);
+      backdrop-filter: blur(18px);
     }
 
-    .hero-copy {
-      padding: 36px;
-      border-radius: 36px;
+    .hero-main {
+      position: relative;
+      overflow: hidden;
+      border-radius: 40px;
+      padding: 42px;
+      animation: rise 0.7s ease both;
+    }
+
+    .hero-main::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -46px auto;
+      width: 220px;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: rgba(159, 43, 31, 0.08);
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 18px;
+      gap: 12px;
+      margin-bottom: 16px;
       color: var(--accent);
-      font-size: 0.82rem;
+      font-size: 0.8rem;
       letter-spacing: 0.24em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
       content: "";
-      width: 38px;
+      width: 42px;
       height: 1px;
       background: currentColor;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: 0.96;
-      font-weight: 600;
-      max-width: 8ch;
+      max-width: 9ch;
+      font-size: clamp(3rem, 6.5vw, 5.8rem);
+      line-height: 0.92;
+      font-weight: 700;
     }
 
     .lead {
-      max-width: 42rem;
+      max-width: 38rem;
       margin: 22px 0 0;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.7;
+      font-size: 1.08rem;
+      line-height: 1.72;
     }
 
-    .hero-note {
+    .hero-side {
+      border-radius: 32px;
       padding: 28px;
-      border-radius: 28px;
-      position: relative;
-      overflow: hidden;
+      display: grid;
+      gap: 18px;
+      align-content: start;
+      animation: rise 0.7s ease 0.08s both;
     }
 
-    .hero-note::after {
-      content: "";
-      position: absolute;
-      inset: auto -40px -50px auto;
-      width: 180px;
-      aspect-ratio: 1;
-      border-radius: 50%;
-      background: rgba(201, 107, 59, 0.12);
-    }
-
-    .note-title {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--accent);
-      margin-bottom: 12px;
-    }
-
-    .note-value {
-      font-size: 2.8rem;
-      line-height: 1;
-      margin: 0 0 10px;
-    }
-
-    .note-text {
+    .mini-title {
       margin: 0;
-      max-width: 24ch;
+      color: var(--accent);
+      font-size: 0.8rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+    }
+
+    .definition {
+      margin: 0;
+      font-size: 1.22rem;
+      line-height: 1.55;
+    }
+
+    .fact-list {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .fact-list li {
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
       color: var(--muted);
-      line-height: 1.7;
+      line-height: 1.55;
+    }
+
+    .fact-list strong {
+      color: var(--ink);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 16px;
+      margin: 18px 4px 16px;
+    }
+
+    .section-head h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1;
+    }
+
+    .section-head p {
+      margin: 0;
+      max-width: 34rem;
+      color: var(--muted);
+      line-height: 1.65;
     }
 
     .grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 20px;
+      gap: 18px;
     }
 
-    .icon-card {
-      border-radius: 30px;
-      padding: 26px;
+    .card {
       position: relative;
       overflow: hidden;
-      min-height: 280px;
+      border-radius: 30px;
+      padding: 24px;
+      min-height: 340px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.28s ease, box-shadow 0.28s ease;
+      animation: rise 0.7s ease both;
     }
 
-    .icon-card:hover {
-      transform: translateY(-6px);
-      box-shadow: 0 28px 80px rgba(63, 39, 25, 0.18);
-    }
+    .card:nth-child(2) { animation-delay: 0.05s; }
+    .card:nth-child(3) { animation-delay: 0.1s; }
+    .card:nth-child(4) { animation-delay: 0.15s; }
+    .card:nth-child(5) { animation-delay: 0.2s; }
+    .card:nth-child(6) { animation-delay: 0.25s; }
 
-    .icon-card::before {
+    .card::after {
       content: "";
       position: absolute;
-      inset: auto -32px -42px auto;
-      width: 120px;
+      inset: auto -22px -34px auto;
+      width: 112px;
       aspect-ratio: 1;
       border-radius: 50%;
-      background: rgba(201, 107, 59, 0.1);
+      background: rgba(159, 43, 31, 0.08);
+    }
+
+    .meta {
+      display: flex;
+      justify-content: space-between;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 18px;
+      font-size: 0.8rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .meta span:first-child {
+      color: var(--accent);
     }
 
     .icon-box {
-      width: 92px;
-      height: 92px;
+      width: 104px;
+      height: 104px;
+      border-radius: 28px;
       display: grid;
       place-items: center;
-      border-radius: 24px;
-      background: linear-gradient(145deg, rgba(201, 107, 59, 0.12), rgba(255, 255, 255, 0.72));
-      border: 1px solid rgba(201, 107, 59, 0.14);
+      background: linear-gradient(145deg, rgba(159, 43, 31, 0.08), rgba(255, 255, 255, 0.7));
+      border: 1px solid rgba(159, 43, 31, 0.12);
+      margin-bottom: 20px;
     }
 
     svg {
-      width: 58px;
-      height: 58px;
-      stroke: var(--text);
-      stroke-width: 1.8;
+      width: 66px;
+      height: 66px;
       fill: none;
+      stroke: var(--ink);
+      stroke-width: 1.8;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .card-id {
+    .card h3 {
+      margin: 0 0 6px;
+      font-size: 1.72rem;
+      line-height: 1.04;
+    }
+
+    .designer {
+      margin: 0 0 14px;
+      color: var(--accent);
+      font-size: 0.95rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.66;
+    }
+
+    .note {
       margin-top: 18px;
-      font-size: 0.76rem;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
+      color: var(--ink);
+      font-size: 0.98rem;
+      line-height: 1.55;
+    }
+
+    .essay {
+      margin-top: 18px;
+      border-radius: 32px;
+      padding: 30px;
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+      animation: rise 0.7s ease 0.16s both;
+    }
+
+    .essay-block {
+      padding-right: 10px;
+      border-right: 1px solid var(--line);
+    }
+
+    .essay-block:last-child {
+      border-right: 0;
+      padding-right: 0;
+    }
+
+    .essay-block h4 {
+      margin: 0 0 10px;
+      font-size: 1.08rem;
+    }
+
+    .essay-block p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.66;
+    }
+
+    .sources {
+      margin-top: 18px;
+      border-radius: 28px;
+      padding: 24px 28px;
+      animation: rise 0.7s ease 0.22s both;
+    }
+
+    .sources h4 {
+      margin: 0 0 12px;
+      font-size: 0.86rem;
       letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--accent);
     }
 
-    .card-title {
-      margin: 8px 0 10px;
-      font-size: 1.55rem;
-      font-weight: 600;
+    .source-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
-    .card-text {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.65;
-      max-width: 26ch;
+    .source-links a {
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      text-decoration: none;
+      background: rgba(255, 255, 255, 0.48);
+      transition: transform 0.22s ease, border-color 0.22s ease;
     }
 
-    .footer-note {
-      margin-top: 28px;
-      padding: 0 6px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
+    .source-links a:hover {
+      transform: translateY(-2px);
+      border-color: rgba(159, 43, 31, 0.28);
     }
 
-    @media (max-width: 920px) {
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 980px) {
       .hero,
-      .grid {
+      .grid,
+      .essay {
         grid-template-columns: 1fr;
       }
 
-      .hero-copy {
-        padding: 28px;
+      .essay-block {
+        border-right: 0;
+        padding-right: 0;
+        padding-bottom: 12px;
+        border-bottom: 1px solid var(--line);
       }
 
-      .icon-card {
-        min-height: 240px;
+      .essay-block:last-child {
+        border-bottom: 0;
+        padding-bottom: 0;
       }
     }
 
-    @media (max-width: 560px) {
+    @media (max-width: 640px) {
       .page {
-        width: min(100% - 20px, 1180px);
-        padding: 20px 0 36px;
+        width: min(100% - 18px, 1200px);
+        padding: 18px 0 40px;
       }
 
-      .hero-copy,
-      .hero-note,
-      .icon-card {
+      .hero-main,
+      .hero-side,
+      .card,
+      .essay,
+      .sources {
         border-radius: 24px;
       }
 
-      .icon-card {
+      .hero-main {
+        padding: 28px;
+      }
+
+      .hero-side,
+      .sources {
         padding: 22px;
       }
 
-      .icon-box {
-        width: 82px;
-        height: 82px;
+      .card {
+        min-height: auto;
       }
 
-      h1 {
-        max-width: 10ch;
+      .topbar,
+      .section-head {
+        gap: 10px;
+      }
+
+      .topbar,
+      .section-head {
+        flex-direction: column;
+        align-items: flex-start;
       }
     }
   </style>
 </head>
 <body>
   <main class="page">
+    <div class="topbar">
+      <span>Design Icons Archive</span>
+      <span>Предметы, которые пережили моду</span>
+    </div>
+
     <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">Interior Design Icons</div>
-        <h1>Иконки для эстетики интерьера</h1>
+      <div class="hero-main">
+        <div class="eyebrow">Collectible, Functional, Canonical</div>
+        <h1>Иконы предметного дизайна</h1>
         <p class="lead">
-          Чистый HTML-шаблон с набором интерьерных пиктограмм: мебель, свет, декор и планировка.
-          Подходит для портфолио студии, каталога услуг или презентации дизайн-системы.
+          Не просто красивые стулья и лампы, а вещи, которые изменили визуальный язык ХХ века и до сих пор
+          тиражируются, цитируются и остаются в производстве. Икона дизайна появляется там, где форма, идея и
+          культура совпадают настолько точно, что предмет становится узнаваемым даже вне контекста интерьера.
         </p>
       </div>
 
-      <aside class="hero-note">
-        <div class="note-title">Коллекция</div>
-        <p class="note-value">6</p>
-        <p class="note-text">
-          Минималистичные SVG-иконки встроены прямо в страницу и масштабируются без потери качества.
+      <aside class="hero-side">
+        <p class="mini-title">Что это значит</p>
+        <p class="definition">
+          Икона дизайна — это объект, у которого есть сильный силуэт, исторический вес, долгий жизненный цикл и
+          влияние на то, как мы вообще представляем современную мебель, свет и предметы быта.
         </p>
+        <ul class="fact-list">
+          <li>
+            <strong>Узнаваемость</strong>
+            Вещь считывается почти как логотип: по контуру, пропорциям и материалам.
+          </li>
+          <li>
+            <strong>Долгая жизнь</strong>
+            Объект не исчезает через сезон, а живёт десятилетиями и продолжает выпускаться.
+          </li>
+          <li>
+            <strong>Влияние</strong>
+            За ним идут сотни цитат, переосмыслений и целые направления в предметном дизайне.
+          </li>
+        </ul>
       </aside>
     </section>
 
+    <div class="section-head">
+      <h2>Шесть предметов, ставших каноном</h2>
+      <p>
+        Здесь не просто интерьерные вещи, а реальные ориентиры для коллекционеров, музеев, брендов и дизайнеров:
+        от трубчатой стали Баухауза до скульптурных бытовых объектов, которые давно вышли за пределы функции.
+      </p>
+    </div>
+
     <section class="grid">
-      <article class="icon-card">
+      <article class="card">
         <div>
+          <div class="meta">
+            <span>Кресло</span>
+            <span>1956</span>
+          </div>
           <div class="icon-box">
             <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M18 34h28v10H18z"></path>
-              <path d="M22 24h20a8 8 0 0 1 8 8v2H14v-2a8 8 0 0 1 8-8Z"></path>
-              <path d="M20 44v8"></path>
-              <path d="M44 44v8"></path>
+              <path d="M18 39h28v9H18z"></path>
+              <path d="M22 22l10 6 10-6"></path>
+              <path d="M24 29h16"></path>
+              <path d="M22 48v8"></path>
+              <path d="M42 48v8"></path>
+              <path d="M18 34c2-6 6-9 14-9s12 3 14 9"></path>
             </svg>
           </div>
-          <div class="card-id">01 / Furniture</div>
-          <h2 class="card-title">Диван</h2>
-          <p class="card-text">Иконка мягкой мебели для разделов о гостиных, подборе гарнитуров и moodboard-панелей.</p>
+          <h3>Eames Lounge Chair</h3>
+          <p class="designer">Charles &amp; Ray Eames</p>
+          <p>
+            Роскошное кресло, которое соединило модернизм и домашний комфорт. Формованная фанера, мягкая кожа и
+            идея «современного клубного кресла» сделали его одним из самых узнаваемых объектов послевоенного дизайна.
+          </p>
         </div>
+        <p class="note">Икона потому, что оно одновременно статусное, тёплое и абсолютно мгновенно узнаваемое.</p>
       </article>
 
-      <article class="icon-card">
+      <article class="card">
         <div>
+          <div class="meta">
+            <span>Стул</span>
+            <span>1925</span>
+          </div>
           <div class="icon-box">
             <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M32 10v24"></path>
-              <path d="M20 18 32 10l12 8"></path>
-              <path d="M24 34h16"></path>
-              <path d="M28 34v18"></path>
-              <path d="M36 34v18"></path>
-              <path d="M24 52h16"></path>
+              <path d="M18 18v22"></path>
+              <path d="M18 18h18"></path>
+              <path d="M36 18v12"></path>
+              <path d="M24 30h18"></path>
+              <path d="M24 30v16"></path>
+              <path d="M42 30v16"></path>
+              <path d="M24 46h18"></path>
             </svg>
           </div>
-          <div class="card-id">02 / Lighting</div>
-          <h2 class="card-title">Лампа</h2>
-          <p class="card-text">Легкая графика для блоков об освещении, сценариях света и декоративных подвесах.</p>
+          <h3>Wassily Chair</h3>
+          <p class="designer">Marcel Breuer</p>
+          <p>
+            Один из символов Баухауза: трубчатая сталь и кожаные ремни превратили кресло в почти графический объект.
+            Оно изменило представление о том, какой может быть мебель в индустриальную эпоху.
+          </p>
         </div>
+        <p class="note">Икона потому, что показало: мебель может быть лёгкой, открытой и почти архитектурной.</p>
       </article>
 
-      <article class="icon-card">
+      <article class="card">
         <div>
-          <div class="icon-box">
-            <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M32 50V34"></path>
-              <path d="M24 22c0 6 4 10 8 12 4-2 8-6 8-12-4 0-8 2-8 6 0-4-4-6-8-6Z"></path>
-              <path d="M22 50h20"></path>
-              <path d="M26 50c0-4 2-7 6-7s6 3 6 7"></path>
-            </svg>
+          <div class="meta">
+            <span>Стул</span>
+            <span>1957</span>
           </div>
-          <div class="card-id">03 / Decor</div>
-          <h2 class="card-title">Растение</h2>
-          <p class="card-text">Подходит для категорий биофильного дизайна, зелёного декора и акцентных интерьерных деталей.</p>
-        </div>
-      </article>
-
-      <article class="icon-card">
-        <div>
           <div class="icon-box">
             <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M16 24h32"></path>
-              <path d="M22 24v28"></path>
-              <path d="M42 24v28"></path>
-              <path d="M14 52h36"></path>
               <path d="M24 18h16"></path>
-              <path d="M28 18v-6"></path>
-              <path d="M36 18v-6"></path>
+              <path d="M24 18v8"></path>
+              <path d="M40 18v8"></path>
+              <path d="M22 28h20"></path>
+              <path d="M24 28 20 52"></path>
+              <path d="M40 28 44 52"></path>
+              <path d="M28 28 26 52"></path>
+              <path d="M36 28 38 52"></path>
             </svg>
           </div>
-          <div class="card-id">04 / Dining</div>
-          <h2 class="card-title">Стол</h2>
-          <p class="card-text">Символ обеденной зоны или рабочего пространства для планировок, лендингов и карточек проектов.</p>
+          <h3>699 Superleggera</h3>
+          <p class="designer">Gio Ponti</p>
+          <p>
+            Манифест радикальной лёгкости. Gio Ponti довёл традиционный итальянский стул до почти предельной
+            тонкости, сохранив при этом прочность и элегантность.
+          </p>
         </div>
+        <p class="note">Икона потому, что это редкий случай, когда технологическая смелость выглядит абсолютно естественно.</p>
       </article>
 
-      <article class="icon-card">
+      <article class="card">
         <div>
+          <div class="meta">
+            <span>Свет</span>
+            <span>1962</span>
+          </div>
           <div class="icon-box">
             <svg viewBox="0 0 64 64" aria-hidden="true">
-              <rect x="18" y="14" width="28" height="36" rx="2"></rect>
-              <path d="M24 20h16v12H24z"></path>
-              <path d="M24 38h16"></path>
+              <path d="M16 50h18"></path>
+              <path d="M22 50a12 12 0 0 1 4-9"></path>
+              <path d="M26 41c6-7 12-17 20-23"></path>
+              <path d="M46 18h6"></path>
+              <path d="M52 18c0 4-3 7-7 7"></path>
             </svg>
           </div>
-          <div class="card-id">05 / Art</div>
-          <h2 class="card-title">Постер</h2>
-          <p class="card-text">Иконка настенного декора для галерей, каталогов искусства и презентации стилистических решений.</p>
+          <h3>Arco</h3>
+          <p class="designer">Achille &amp; Pier Giacomo Castiglioni</p>
+          <p>
+            Напольный светильник, который решил задачу подвесного света без отверстия в потолке. Мраморное основание
+            и длинная дуга превратили утилитарную идею в сценографический жест.
+          </p>
         </div>
+        <p class="note">Икона потому, что здесь инженерная находчивость и скульптурная форма существуют как одно целое.</p>
       </article>
 
-      <article class="icon-card">
+      <article class="card">
         <div>
+          <div class="meta">
+            <span>Хранение</span>
+            <span>1967</span>
+          </div>
           <div class="icon-box">
             <svg viewBox="0 0 64 64" aria-hidden="true">
-              <path d="M14 14h16v14H14z"></path>
-              <path d="M34 14h16v8H34z"></path>
-              <path d="M34 26h16v24H34z"></path>
-              <path d="M14 32h16v18H14z"></path>
-              <path d="M30 21h4"></path>
-              <path d="M22 28v4"></path>
+              <path d="M24 16h16"></path>
+              <path d="M20 22h24"></path>
+              <path d="M18 22v10"></path>
+              <path d="M46 22v10"></path>
+              <path d="M20 32h24"></path>
+              <path d="M18 32v10"></path>
+              <path d="M46 32v10"></path>
+              <path d="M20 42h24"></path>
+              <path d="M24 48h16"></path>
             </svg>
           </div>
-          <div class="card-id">06 / Layout</div>
-          <h2 class="card-title">Планировка</h2>
-          <p class="card-text">Универсальная пиктограмма для чертежей, схем помещений и концептов по зонированию пространства.</p>
+          <h3>Componibili</h3>
+          <p class="designer">Anna Castelli Ferrieri</p>
+          <p>
+            Модульные цилиндрические секции хранения стали идеальным образом пластиковой повседневности: простые,
+            мобильные, удобные и по-настоящему демократичные.
+          </p>
         </div>
+        <p class="note">Икона потому, что она вошла не только в музеи, но и в обычные квартиры как часть новой бытовой культуры.</p>
+      </article>
+
+      <article class="card">
+        <div>
+          <div class="meta">
+            <span>Объект</span>
+            <span>1990</span>
+          </div>
+          <div class="icon-box">
+            <svg viewBox="0 0 64 64" aria-hidden="true">
+              <path d="M22 18h20"></path>
+              <path d="M32 18v14"></path>
+              <path d="M28 32c0 6 4 10 4 16"></path>
+              <path d="M36 32c0 6-4 10-4 16"></path>
+              <path d="M24 48h16"></path>
+            </svg>
+          </div>
+          <h3>Juicy Salif</h3>
+          <p class="designer">Philippe Starck</p>
+          <p>
+            Соковыжималка Alessi давно стала примером объекта, который обсуждают не столько как инструмент, сколько
+            как манифест дизайна. Почти инопланетная форма превратила бытовую вещь в коллекционный символ.
+          </p>
+        </div>
+        <p class="note">Икона потому, что она сместила акцент с «удобно» на «сильно, провокационно, незабываемо».</p>
       </article>
     </section>
 
-    <p class="footer-note">
-      Страница не использует внешние библиотеки: откройте файл в браузере и при необходимости замените тексты,
-      палитру или SVG на собственный набор иконок.
-    </p>
+    <section class="essay">
+      <div class="essay-block">
+        <h4>Сильный силуэт</h4>
+        <p>
+          У икон дизайна всегда есть форма, которую можно узнать почти по контуру. Это работает как визуальная
+          подпись предмета.
+        </p>
+      </div>
+      <div class="essay-block">
+        <h4>Не сезон, а эпоха</h4>
+        <p>
+          Такие объекты переживают тренды. Их продолжают производить, выставлять, покупать и пересобирать в новых
+          интерьерах десятилетиями.
+        </p>
+      </div>
+      <div class="essay-block">
+        <h4>Материал как идея</h4>
+        <p>
+          Фанера, трубчатая сталь, пластик, мрамор: в иконах материал почти всегда несёт не только функцию, но и
+          культурный жест.
+        </p>
+      </div>
+      <div class="essay-block">
+        <h4>Влияние на рынок</h4>
+        <p>
+          Икона запускает язык подражаний. После неё появляются вариации, оммажи и целые категории вещей,
+          построенных на её логике.
+        </p>
+      </div>
+    </section>
+
+    <section class="sources">
+      <h4>Опорные источники</h4>
+      <div class="source-links">
+        <a href="https://www.vitra.com/en-ww/product/eames-lounge-chair" target="_blank" rel="noreferrer">Vitra / Eames Lounge Chair</a>
+        <a href="https://www.knoll.com/shop/en_us/living-lounge-chairs/wassily-chair/7852.html" target="_blank" rel="noreferrer">Knoll / Wassily Chair</a>
+        <a href="https://www.cassina.com/ww/en/products/699-superleggera.html" target="_blank" rel="noreferrer">Cassina / Superleggera</a>
+        <a href="https://flos.com/en/us/stories/arco-a-design-icon.html" target="_blank" rel="noreferrer">Flos / Arco</a>
+        <a href="https://www.kartell.com/US/en/stories/kartell-componibili" target="_blank" rel="noreferrer">Kartell / Componibili</a>
+        <a href="https://us.alessi.com/products/juicy-salif-citrus-squeezer" target="_blank" rel="noreferrer">Alessi / Juicy Salif</a>
+      </div>
+    </section>
   </main>
 </body>
 </html>
